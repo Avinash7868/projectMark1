@@ -1,0 +1,103 @@
+body {
+  background-color:  rgb(67 49 96);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* animation: colorChange 5s infinite; */
+}
+
+.container {
+  max-width: 450px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  /* border: 2px solid rebeccapurple; */
+  padding: 10px;
+  /* border-radius: 15px; */
+  margin-bottom: 20px;
+  /* background-color: rgb(91, 59, 143); */
+}
+h2:hover{
+    border-color: #45a049;
+    color: #b99bad;
+}
+label {
+    font-weight: bold;
+}
+.form-group input[type="password"]::placeholder {
+    color: #ffffff;
+  }
+   
+   .form-group input[type="password"]:hover::placeholder {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    color: red;
+    font-weight: bold;
+  }
+.form-group input[type="email"]::placeholder {
+    color: #ffffff;
+  }
+   
+   .form-group input[type="email"]:hover::placeholder {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    color: rgb(179, 45, 161);
+    font-weight: bold;
+  }
+ 
+    
+  
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.form-group input[type="submit"],
+.form-group input[type = "button"] {
+  padding: 10px;
+  /* margin: 15px; */
+  margin-left: 4px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #07ee13;
+}
+.form-group input[type="button"]:hover {
+    background-color: #b6d40c;
+  }
+   

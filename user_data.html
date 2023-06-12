@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>user_data</title>
+    <link href="user_data.css" rel="stylesheet">
+    <script src="registration.js"></script>
+</head>
+
+<body>
+
+    <div id="registrations" class="mt-4"></div>
+    
+
+<script>
+ 
+    function Remove5(rowIndex) {
+    // Retrieve the stored registrations from local storage
+    var storedData = JSON.parse(localStorage.getItem('registrations'));
+    // Remove the row from the storedData array
+    storedData.splice(rowIndex, 1);
+    // Remove the row from the table
+    this.parentNode.parentNode.remove();
+    // Update the local storage with the modified data
+    localStorage.setItem('registrations', JSON.stringify(storedData));
+
+}
+   // Function to update user data
+   function updateData(rowIndex) {
+    // Retrieve the stored registrations from local storage
+    var storedData = JSON.parse(localStorage.getItem('registrations'));
+
+    // Prompt the user to enter updated data
+    var updatedName = prompt("Enter updated name:");
+    var updatedEmail = prompt("Enter updated email:");
+    var updatedPassword = prompt("Enter updated password:");
+    var updatedMobile = prompt("Enter updated mobile number:");
+
+    // Update the corresponding user data in the storedData array
+    var userToUpdate = storedData[rowIndex];
+    userToUpdate.name = updatedName;
+    userToUpdate.email = updatedEmail;
+    userToUpdate.password = updatedPassword;
+    userToUpdate.mobile = updatedMobile;
+
+    // Update the local storage with the modified data
+    localStorage.setItem('registrations', JSON.stringify(storedData));
+
+    // Reload the page to reflect the updated data
+    location.reload();
+}
+
+    // Retrieve registration data from local storage
+    var storedData = JSON.parse(localStorage.getItem('registrations'));
+    // var rem=document.getElementById("rem")
+ 
+    if (storedData && storedData.length > 0 ) {
+        var registrationDataElement = document.getElementById('registrations');
+        var table = document.createElement('table');
+        table.classList.add('table');
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Mobile Number</th>
+                    <th>remove</th>
+                    <th>update</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        `;
+
+        var tbody = table.querySelector('tbody');
+
+        storedData.forEach(function (person) {
+            var row = document.createElement('tr');
+            row.innerHTML = `
+                <td id="del1">${person.name}</td>
+                <td id="del2">${person.email}</td>
+                <td id="del3">${person.password}</td>
+                <td id="del4">${person.mobile}</td>
+                <td><input type="button" value="Remove" id ="rem5" onclick="Remove5.call(this, ${storedData.indexOf(person)})"></td>
+                <td><input type="button" value="Update" onclick="updateData.call(this,${storedData.indexOf(person)})"></td>
+            `;
+            tbody.appendChild(row);
+        });
+
+        registrationDataElement.appendChild(table);
+    }
+    
+</script>
+
+</body>
+
+</html>

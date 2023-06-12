@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="registration2.css">
+  <script src="registration.js"></script>
+</head>
+<body>
+  <div class="container"  >
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm" onsubmit="registerUser(event)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter the username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter the Email ID" >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Do not share the password"required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" placeholder="Enter the mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+       <a href="login.html"> <input type="button" value="already a user?"></a>
+      </div>
+
+      <div id="successMessage" class="success-message" style="display: none;">Registration successful!</div>
+      <div id="errorMessage" class="error-message" style="display: none;">Registration failed. Please try again.</div>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            /* background-color: pink; */
+            color: palevioletred;
+        }
+        header::before{
+            background: url('https://source.unsplash.com/collection/11649432/1600x900') no-repeat center center/cover;
+            /* Just go to the unsplash site and put only the 'collection number' of it on the above link */
+            
+            /* The content is the most importent otherwise it will not going to show any content including the img */
+            content: "";
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            /* Now z-index is the most importent after the content stylesheet comment z-index then you will get the ans. */
+            z-index: -1;
+
+            opacity: 1;
+        }
+        header{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navigation{
+            font-family:Impact;
+            display: flex;
+            font-size: 20px;
+        }
+
+        li {
+            list-style: none;
+            padding: 20px 23px;
+        }
+
+        section{
+            height: 344px;
+            width: 834px;
+            /* border: 2px solid red; */
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* section::before{
+            content: "This is content of before";
+        } */
+        /* section::after{
+            content: "This is content of after";
+        } */
+        h1{
+            font-size: 4rem;
+        }
+        p{
+            text-align: center;
+        }
+        #userdata{
+            color: palevioletred;
+            /* text-decoration: none; */
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation">
+                <li class ="item">Home</li >
+                <li class ="item">About</li >
+                <li class ="item">Services</li >
+                <li class ="item">Contact Us</li >
+                <a href="user_data.html"><li id="userdata" class ="item">User Data</li ></a>
+            </ul>
+        </nav>
+        <section>
+            <h1>Welcome to the Coding World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae vitae modi, doloremque tenetur facilis ducimus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero accusamus soluta error. Explicabo sapiente velit in eum ut, rerum ea illum eligendi eius?</p>
+        </section>
+    </header>
+</body>
+</html>
